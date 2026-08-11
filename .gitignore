@@ -1,0 +1,14 @@
+# MATLAB/Simulink junk
+*.asv
+*.autosave
+slprj/
+sccprj/
+*.slxc
+codegen/
+*.mexw64
+*.mexa64
+*.mexmaci64
+
+# OS junk
+Thumbs.db
+desktop.ini
