@@ -1,3 +1,4 @@
+function [sys, sys_aug] = F14LongModel()
 clear; clc;
 
 %========================================================================
@@ -81,3 +82,20 @@ D_aug = [D_new TurbSys.D];
 sys_aug = ss(A_aug, B_aug, C_aug, D_aug);
 sys_aug.InputName = {'d_c'; 'n1'};
 sys_aug.OutputName = {'alpha'; 'q'};
+
+
+% Check poles
+disp('sys_aug Open Loop Poles:')
+pole(sys_aug)
+
+% % Step response on q channel
+% figure;
+% %opt = stepDataOptions('StepAmplitude', 1);
+% step(sys_aug(2,:), 10)
+% title('sys_aug - Pitch Rate Step Response')
+% ylabel('q (rad/s)')
+% grid on
+% 
+% stepinfo(sys_aug(2,:), 1)
+% 
+% end
